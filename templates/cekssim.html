@@ -1,0 +1,90 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Presentation {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="banner-section">
+        <div class="container">
+            <div class="page-title">
+                <div class="page-title-inner">
+                    <div class="breadcrumbs text-left">
+                        <div class="breadcrumbs-wrap">
+                            <div class="contact-section contact-transform contact-style4 mg-change-100" style="margin-top: -300px; margin-bottom: 0px;">
+                                <div class="container">
+                                    <div class="contact-inside">
+                                                <div class="title-section">
+                                                    <h2 class="flat-title shape-image">Cek Nilai <p style="font-style: italic;">Structural Similarity Index Measure</p> (SSIM)</h2>
+                                                </div>
+                                            <form method="POST" class="form-contact form-submit" enctype="multipart/form-data">
+                                                <div class="container d-lg-flex">
+                                                    <div class="col-left">                                                        
+                                                            {% csrf_token %}
+                                                            <div class="message-wrap">
+                                                                {% block image_original %}
+                                                                    
+                                                                {% endblock image_original %}                                                           
+                                                            </div>
+                                                            <div class="themesflat-content-box">
+                                                                <div class="custom-nav-one nav-custom">
+                                                                    <div class="banners-z">
+                                                                        <div class="flat-carousel-box data-effect clearfix">                                            
+                                                                                <div class="testimonial testimonial-box testimonial-type2">
+                                                                                        <img src="{% block imageupload_original %}                                                                              
+                                                                                        {% endblock imageupload_original %}" alt="">   
+                                                                                </div>
+                                                                                <p>
+                                                                                    {% block ssim %}
+                                                                                                
+                                                                                    {% endblock ssim %}
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-right" style="padding-top: 0px;">
+                                                        <div class="message-wrap">
+                                                            {% block image_result %}
+                                                                
+                                                            {% endblock image_result %}                                                           
+                                                        </div>
+                                                        <div class="themesflat-content-box">
+                                                            <div class="custom-nav-one nav-custom">
+                                                                <div class="banners-z">
+                                                                    <div class="flat-carousel-box data-effect clearfix">                                            
+                                                                            <div class="testimonial testimonial-box testimonial-type2">
+                                                                                    <img src="{% block imageupload_result %}                                                                              
+                                                                                    {% endblock imageupload_result %}" alt="">   
+                                                                            </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="fl-btn btn-linear linear-color-one">
+                                                            <button name="submit" type="submit" class="submit btn-contact hv-linear border-corner" id="submit">Eksekusi</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div><!-- contact-section -->
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </div><!-- banner-section -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

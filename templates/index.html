@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Presentation {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="banner-section">
+        <div class="container">
+            <div class="page-title">
+                <div class="page-title-inner">
+                    <div class="breadcrumbs text-left">
+                        <div class="breadcrumbs-wrap">
+                            <div class="contact-section contact-transform contact-style4 mg-change-100" style="margin-top: -200px; margin-bottom: -170px;">
+                                <div class="container">
+                                    <div class="contact-inside">
+                                                <div class="title-section">
+                                                    <h2 class="flat-title shape-image">Kriptografi Citra Digital</h2>
+                                                </div>
+                                            <div class="container d-lg-flex">
+                                                <div class="col-left">
+                                                    <div class="title" style="font-size: 25px; margin-bottom: 30px;">
+                                                        <h3 class="flat-title">Enkripsi dan Dekripsi Citra Digital</h3>
+                                                    </div>
+                                                    <div class="fl-btn btn-linear linear-color-one">
+                                                        <form action="crypto" method="GET">
+                                                            <button class="btn-contact hv-linear border-corner">Pergi Ke Halaman</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="col-right" style="padding: 0%;">
+                                                    <div class="title" style="font-size: 25px; margin-bottom: 30px;">                     
+                                                        <h3 class="flat-title">Cek Nilai <p style="font-style: italic;">Structural Similarity Index Measure</p> (SSIM)</h3>
+                                                    </div>
+                                                    <div class="fl-btn btn-linear linear-color-one">
+                                                        <form action="ssim" method="GET">
+                                                            <button class="btn-contact hv-linear border-corner">Pergi Ke Halaman</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div><!-- contact-section -->
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </div><!-- banner-section -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

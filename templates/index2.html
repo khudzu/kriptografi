@@ -1,0 +1,176 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Presentation {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="banner-section">
+        <div class="container">
+            <div class="page-title">
+                <div class="page-title-inner">
+                    <div class="breadcrumbs text-left">
+                        <div class="breadcrumbs-wrap">
+                            <div class="contact-section contact-transform contact-style4 mg-change-100">
+                                <div class="container">
+                                    <div class="contact-inside">
+                                                <div class="title-section">
+                                                    <h2 class="flat-title shape-image">Kriptografi</h2>
+                                                </div>
+                                            <div class="container d-lg-flex">
+                                                <div class="col-left">
+                                                    <form method="POST" class="form-contact form-submit">
+                                                        {% csrf_token %}
+                                                        <div class="text-wrap d-sm-flex clearfix">
+                                                            <div class="w-left">
+                                                                <label for="fungsi">Fungsi</label>
+                                                                <select class="form-control" id="fungsi" name="fungsi">
+                                                                    <option value="enkripsi">Enkripsi</option>
+                                                                    <option value="deskripsi">Deskripsi</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div class="w-right">
+                                                                <label for="algoritma">Algoritma</label>
+                                                                <select class="form-control" id="algoritma" name="algoritma">
+                                                                    <option value="hc">Hill Cipher</option>
+                                                                    <option value="cc">Caesar Cipher</option>
+                                                                    <option value="vc">Vigenere Cipher</option>
+                                                                    <option value="tc">Transposisi Cipher</option>
+                                                                    <option value="se">Super Enkripsi (Caesar Cipher & Transposisi Cipher)</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-wrap d-sm-flex clearfix">
+                                                            <div class="w-left" id="kunciteksDiv">
+                                                                <label for="kunciteks">Kunci</label>
+                                                                <input type="text" name="kunciteks" id="kunciteks" value="" class="form-control" placeholder="Kunci">
+                                                            </div>
+                                                            <div class="w-left" id="kunciangkaDiv">
+                                                                <label for="kunciangka">Kunci</label>
+                                                                <input type="number" name="kunciangka" id="kunciangka" value="" class="form-control" placeholder="Kunci">
+                                                            </div>
+                                                            <div class="w-right" id="kuncikeduaDiv">
+                                                                <label for="kuncikedua">Kunci Kedua</label>
+                                                                <input type="number" name="kuncikedua" id="kuncikedua" value="" class="form-control" placeholder="Kunci Kedua">
+                                                            </div>
+                                                        </div>
+                                                        <div class="message-wrap">
+                                                            <label for="pesan">Pesan</label>
+                                                            <textarea name="pesan" id="pesan" rows="8" placeholder="Pesan" required="required"></textarea>
+                                                        </div>
+                                                        <div class="fl-btn btn-linear linear-color-one">
+                                                            <button name="submit" type="submit" class="submit btn-contact hv-linear border-corner" id="submit">Eksekusi</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col-right">
+                                                    <label for="pesan">Hasil Eksekusi</label>
+                                                    <div class="themesflat-content-box">
+                                                        <div class="custom-nav-one nav-custom">
+                                                            <div class="banners-z">
+                                                                <div class="flat-carousel-box data-effect clearfix">                                            
+                                                                        <div class="testimonial testimonial-box testimonial-type2">
+                                                                            <div class="author-info">
+                                                                                <p>
+                                                                                    {{hasil}}
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div><!-- contact-section -->
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </div><!-- banner-section -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+    $(document).ready(function() {
+        $('#kunciangkaDiv').hide();
+        $('#kunciangka').removeAttr('required');
+        $('#kunciangka').removeAttr('data-error');
+        $('#kuncikeduaDiv').hide();
+        $('#kuncikedua').removeAttr('required');
+        $('#kuncikedua').removeAttr('data-error');
+        $('#kunciteksDiv').hide();
+        $('#kunciteks').removeAttr('required');
+        $('#kunciteks').removeAttr('data-error');
+        $("#algoritma").change(function() {
+        if ($(this).val() == "cc") {
+            $('#kunciangkaDiv').show();
+            $('#kunciangka').attr('required', '');
+            $('#kunciangka').attr('data-error', 'This field is required.');
+            $('#kuncikeduaDiv').hide();
+            $('#kuncikedua').removeAttr('required');
+            $('#kuncikedua').removeAttr('data-error');
+            $('#kunciteksDiv').hide();
+            $('#kunciteks').removeAttr('required');
+            $('#kunciteks').removeAttr('data-error');
+        }
+
+        else if ($(this).val() == "vc") {
+            $('#kunciteksDiv').show();
+            $('#kunciteks').attr('required', '');
+            $('#kunciteks').attr('data-error', 'This field is required.');
+            $('#kunciangkaDiv').hide();
+            $('#kunciangka').removeAttr('required');
+            $('#kunciangka').removeAttr('data-error');
+            $('#kuncikeduaDiv').hide();
+            $('#kuncikedua').removeAttr('required');
+            $('#kuncikedua').removeAttr('data-error');
+        }
+        
+        else if ($(this).val() == "tc") {
+            $('#kunciangkaDiv').show();
+            $('#kunciangka').attr('required', '');
+            $('#kunciangka').attr('data-error', 'This field is required.');
+            $('#kuncikeduaDiv').hide();
+            $('#kuncikedua').removeAttr('required');
+            $('#kuncikedua').removeAttr('data-error');
+            $('#kunciteksDiv').hide();
+            $('#kunciteks').removeAttr('required');
+            $('#kunciteks').removeAttr('data-error');
+        }
+
+        else if ($(this).val() == "se") {
+            $('#kunciangkaDiv').show();
+            $('#kunciangka').attr('required', '');
+            $('#kunciangka').attr('data-error', 'This field is required.');
+            $('#kuncikeduaDiv').show();
+            $('#kuncikedua').attr('required', '');
+            $('#kuncikedua').attr('data-error', 'This field is required.');
+            $('#kunciteksDiv').hide();
+            $('#kunciteks').removeAttr('required');
+            $('#kunciteks').removeAttr('data-error');            
+        }
+
+        else {
+            $('#kunciangkaDiv').hide();
+            $('#kunciangka').removeAttr('required');
+            $('#kunciangka').removeAttr('data-error');
+            $('#kuncikeduaDiv').hide();
+            $('#kuncikedua').removeAttr('required');
+            $('#kuncikedua').removeAttr('data-error');
+            $('#kunciteksDiv').hide();
+            $('#kunciteks').removeAttr('required');
+            $('#kunciteks').removeAttr('data-error');
+        }
+        });
+        $("algoritma").trigger("change");
+    });
+</script>
+{% endblock javascripts %}

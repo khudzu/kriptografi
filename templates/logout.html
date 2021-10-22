@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page_title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/iofrm-theme61.css">
+    <link href="/static/icon/luqs.ico" rel="shortcut icon">
+</head>
+<body>
+    <div class="form-body" class="container-fluid">
+        <div class="website-logo">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="/static/images/logo/luqsfix.png" alt="images" height="80px">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="/static/images/graphic3.svg" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Apakah anda yakin ingin {{page_title}}?</h3>
+                        <form method="POST">
+                            {% csrf_token %}                            
+                            <div class="form-button">
+                                <input id="submit" type="submit" class="ibtn" value="Iya, Saya ingin logout" name="logout"></input>                                
+                            </div>
+                            <div class="form-button">
+                                <input id="submit" type="submit" class="ibtn" value="Tidak, Batalkan logout" name="logout"></input>
+                            </div>
+                        </form>
+                        <div class="other-links">
+                            <span>Follow me</span><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">Linkedin</a><a href="#">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/popper.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>
+</body>
+</html>

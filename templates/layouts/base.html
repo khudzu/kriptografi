@@ -1,0 +1,74 @@
+<!--
+
+=========================================================
+* Pixel Lite Bootstrap Design System
+=========================================================
+
+* Product Page: https://themesberg.com/product/ui-kits/pixel-lite-free-bootstrap-4-ui-kit
+* Copyright 2019 Themesberg (https://www.themesberg.com)
+* License Themesberg (Crafty Dwarf LLC) (https://themesberg.com/licensing)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <title>JustLuqs</title>
+
+    <!-- Mobile Specific Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="/static/stylesheet/bootstrap.css">
+
+    <!-- Template Style-->
+    <link rel="stylesheet" href="/static/stylesheet/jquery-fancybox.css">
+    <link rel="stylesheet" href="/static/stylesheet/jquery-ui.css">
+    <link rel="stylesheet" href="/static/stylesheet/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/stylesheet/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/rev-slider/css/layers.css">
+    <link rel="stylesheet" href="/static/rev-slider/css/navigation.css">
+    <link rel="stylesheet" href="/static/rev-slider/css/settings.css">
+    <link rel="stylesheet" href="/static/stylesheet/animate.css">
+    <link rel="stylesheet" href="/static/stylesheet/custom-animation.css">
+    <link rel="stylesheet" href="/static/stylesheet/icomoon.css">
+    <link rel="stylesheet" href="/static/stylesheet/shortcodes.css">
+    <link rel="stylesheet" href="/static/stylesheet/style.css">
+    <link rel="stylesheet" href="/static/stylesheet/responsive.css">
+    <link rel="stylesheet" href="/static/stylesheet/colors/color1.css" id="colors">
+    <link rel="stylesheet" href="/static/stylesheet/colors/colorsub1.css" id="colors_s">
+
+    <link href="/static/icon/luqs.ico" rel="shortcut icon">
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+
+<body class="counter-scroll">
+
+    {% include 'includes/navigation.html' %}
+
+    <main>
+
+        {% include 'includes/preloader.html' %}
+
+        {% block content %}{% endblock content %}
+
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    {% include 'includes/scripts.html' %}
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+
+</body>
+
+</html>

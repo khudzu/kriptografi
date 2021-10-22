@@ -1,0 +1,112 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Presentation {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="banner-section">
+        <div class="container">
+            <div class="page-title">
+                <div class="page-title-inner">
+                    <div class="breadcrumbs text-left">
+                        <div class="breadcrumbs-wrap">
+                            <div class="contact-section contact-transform contact-style4 mg-change-100" style="margin-top: -300px; margin-bottom: -50px;">
+                                <div class="container">
+                                    <div class="contact-inside">
+                                                <div class="title-section">
+                                                    <h2 class="flat-title shape-image">Enkripsi & Dekripsi Citra Digital</h2>
+                                                </div>
+                                            <div class="container d-lg-flex">
+                                                <div class="col-left">
+                                                    <form method="POST" class="form-contact form-submit" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+                                                        <div class="text-wrap d-sm-flex clearfix">
+                                                            <div class="w-left">
+                                                                {% block select %}
+            
+                                                                {% endblock select %}
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-wrap d-sm-flex clearfix">
+                                                            <div class="w-left" id="kunciteksDiv">
+                                                                {% block kunci_a %}
+            
+                                                                {% endblock kunci_a %}
+                                                            </div>
+                                                            <div class="w-right" id="kunciangkaDiv">
+                                                                {% block kunci_b %}
+                                                                
+                                                                {% endblock kunci_b %}
+                                                            </div>
+                                                            <div class="w-right" id="kuncikeduaDiv">
+                                                                {% block kunci_d %}
+                                                                
+                                                                {% endblock kunci_d %}
+                                                            </div>
+                                                        </div>
+                                                        <div class="message-wrap">
+                                                            {% block image %}
+                                                                
+                                                            {% endblock image %}                                                           
+                                                        </div>
+                                                        <div class="fl-btn btn-linear linear-color-one">
+                                                            <button name="submit" type="submit" class="submit btn-contact hv-linear border-corner" id="submit">Eksekusi</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col-right">
+                                                    <label for="pesan">Hasil Eksekusi Citra Digital</label>
+                                                    <div class="themesflat-content-box">
+                                                        <div class="custom-nav-one nav-custom">
+                                                            <div class="banners-z">
+                                                                <div class="flat-carousel-box data-effect clearfix">                                            
+                                                                        <div class="testimonial testimonial-box testimonial-type2">
+                                                                                <img src="{% block imageupload %}                                                                              
+                                                                                {% endblock imageupload %}" alt="">   
+                                                                        </div>
+                                                                        <p style="padding-bottom: 20px;">
+                                                                            {% block durasi %}
+                                                                                        
+                                                                            {% endblock durasi %}
+                                                                        </p>
+                                                                        <a id="download" href="{{uploaded_data_url}}" download>
+                                                                            <div class="fl-btn btn-linear linear-color-one">
+                                                                                <button name="submit" type="submit" class="submit btn-contact hv-linear border-corner" id="submit">Unduh Citra Digital</button>
+                                                                            </div>
+                                                                        </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div><!-- contact-section -->
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </div><!-- banner-section -->
+    <script>
+        var x = document.getElementById("download");
+        var image_result="{{uploaded_data_url}}";
+        if (image_result == "") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      </script>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}
